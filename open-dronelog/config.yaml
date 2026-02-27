@@ -1,0 +1,57 @@
+# Home Assistant Add-on: Open DroneLog
+# https://github.com/arpanghosh8453/open-dronelog
+
+name: "Open DroneLog"
+version: "2.19.0"
+slug: open-dronelog
+description: "Local-first drone flight log viewer with charts, maps, and analytics. Supports DJI and Litchi CSV formats."
+url: "https://github.com/arpanghosh8453/open-dronelog"
+
+# Use the pre-built GHCR image (no local build needed)
+image: ghcr.io/arpanghosh8453/open-dronelog:{arch}
+
+# Supported architectures (must match what GHCR publishes)
+arch:
+  - amd64
+  - aarch64
+
+# Start after core HA is ready
+startup: application
+boot: auto
+
+# Web UI link shown in the add-on info page
+webui: "http://[HOST]:[PORT:8080]/"
+
+# Map the /share folder so users can drop DJI logs there for auto-sync
+map:
+  - type: share
+    read_only: true
+  - type: media
+    read_only: true
+
+# Expose port 80 (Nginx inside container) as 8080 on the host
+ports:
+  80/tcp: 8080
+ports_description:
+  80/tcp: "Open DroneLog web interface"
+
+# User-configurable options
+options:
+  DJI_API_KEY: ""
+  KEEP_UPLOADED_FILES: true
+  SYNC_LOGS_PATH: ""
+  SYNC_INTERVAL: ""
+  LOG_LEVEL: "info"
+
+schema:
+  DJI_API_KEY: "str?"
+  KEEP_UPLOADED_FILES: "bool"
+  SYNC_LOGS_PATH: "str?"
+  SYNC_INTERVAL: "str?"
+  LOG_LEVEL: "list(trace|debug|info|warn|error)"
+
+# Persistent data stored in /data inside the container
+# HA automatically provides a persistent /data mount per add-on
+
+# No special privileges needed
+init: false

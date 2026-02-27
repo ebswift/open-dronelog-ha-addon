@@ -1,0 +1,24 @@
+configuration:
+  DJI_API_KEY:
+    name: DJI API Key
+    description: >-
+      API key for decrypting DJI V13+ flight logs.
+      Leave empty if you only import older logs or Litchi CSV files.
+  KEEP_UPLOADED_FILES:
+    name: Keep Uploaded Files
+    description: >-
+      Retain copies of imported log files with hash-based deduplication.
+  SYNC_LOGS_PATH:
+    name: Sync Logs Path
+    description: >-
+      Path inside the container to auto-import logs from (e.g., /share/drone-logs or /media/drone-logs).
+      Leave empty to disable auto-sync.
+  SYNC_INTERVAL:
+    name: Sync Interval
+    description: >-
+      Cron expression for automatic sync schedule (e.g., "0 0 */8 * * *" for every 8 hours).
+      Leave empty to only sync on startup / manual trigger.
+  LOG_LEVEL:
+    name: Log Level
+    description: >-
+      Application log verbosity.

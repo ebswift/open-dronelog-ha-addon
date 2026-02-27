@@ -1,0 +1,6 @@
+# Build configuration for Open DroneLog HA add-on
+# Maps HA architectures to the corresponding GHCR image tags
+
+build_from:
+  amd64: ghcr.io/arpanghosh8453/open-dronelog:latest
+  aarch64: ghcr.io/arpanghosh8453/open-dronelog:latest
