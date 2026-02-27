@@ -43,4 +43,4 @@ To automatically import DJI logs dropped into HA's shared folder:
 ## More info
 
 - [Open DroneLog on GitHub](https://github.com/arpanghosh8453/open-dronelog)
-- [Support / Issues](https://github.com/arpanghosh8453/open-dronelog/issues)
+- [Support or Issues](https://github.com/arpanghosh8453/open-dronelog/issues)
