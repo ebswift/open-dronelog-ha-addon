@@ -7,8 +7,8 @@ slug: open-dronelog
 description: "Local-first drone flight log viewer with charts, maps, and analytics. Supports DJI and Litchi CSV formats."
 url: "https://github.com/arpanghosh8453/open-dronelog"
 
-# Use the pre-built GHCR image (no local build needed)
-image: ghcr.io/arpanghosh8453/open-dronelog:{arch}
+# Use the pre-built GHCR image (tagless reference required by HA)
+image: ghcr.io/arpanghosh8453/open-dronelog
 
 # Supported architectures (must match what GHCR publishes)
 arch:
