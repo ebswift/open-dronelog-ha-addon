@@ -39,6 +39,15 @@ fi
 printf ' SYNC_LOGS_PATH:     %s\n' "${SYNC_LOGS_PATH:-(not set)}"
 printf ' SYNC_INTERVAL:      %s\n' "${SYNC_INTERVAL:-(not set)}"
 printf ' RUST_LOG:           %s\n' "${RUST_LOG:-info}"
+
+# Debug: show what files the container actually sees in the sync path
+if [ -n "$SYNC_LOGS_PATH" ] && [ -d "$SYNC_LOGS_PATH" ]; then
+    printf ' Files visible in sync path (first 10):\n'
+    ls -1 "$SYNC_LOGS_PATH"/*.txt "$SYNC_LOGS_PATH"/*.dat 2>/dev/null | head -10 || printf '   (no matching .txt/.dat files or dir empty)\n'
+else
+    printf ' SYNC_LOGS_PATH dir does not exist or is not set\n'
+fi
+
 printf '=============================================\n'
 
 # Hand off to the real app
