@@ -2,12 +2,12 @@
 # https://github.com/ebswift/open-dronelog-ha-addon
 
 name: "Open DroneLog"
-version: "2.20.0-ebs"
+version: "2.19.1-ebs"
 slug: open-dronelog
 description: "Local-first drone flight log viewer with charts, maps, and analytics. Supports DJI and Litchi CSV formats."
 url: "https://github.com/ebswift/open-dronelog-ha-addon"
 
-# Use the pre-built GHCR image from upstream (tagless = latest)
+# Use the pre-built GHCR image from upstream (no tag = latest)
 image: ghcr.io/arpanghosh8453/open-dronelog
 
 arch:
@@ -20,7 +20,7 @@ boot: auto
 webui: "http://[HOST]:[PORT:8080]/"
 
 # Map HAOS /share so users can drop logs in /share/drone-logs for auto-sync.
-# read_only: false is required on HAOS for reliable subdirectory creation and import.
+# read_only: false recommended on HAOS for reliable subdirectory handling.
 map:
   - type: share
     read_only: false
