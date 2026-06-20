@@ -7,9 +7,8 @@ slug: open-dronelog
 description: "Local-first drone flight log viewer with charts, maps, and analytics. Supports DJI and Litchi CSV formats."
 url: "https://github.com/ebswift/open-dronelog-ha-addon"
 
-# Pre-built upstream image. The local Dockerfile now uses explicit FROM
-# (required on HAOS 2026.6+ / Supervisor >= 2026.04).
-image: ghcr.io/arpanghosh8453/open-dronelog
+# No image: line on HAOS 2026.6+.
+# Local Dockerfile with explicit FROM is now used so the wrapper can run.
 
 arch:
   - amd64
