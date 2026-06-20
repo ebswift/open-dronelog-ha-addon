@@ -1,7 +1,7 @@
-FROM ghcr.io/arpanghosh8453/open-dronelog:latest
+FROM ghcr.io/arpanghosh8453/open-dronelog:nightly
 
-# Explicit FROM + ENTRYPOINT (required on HAOS 2026.6+ / Supervisor >= 2026.04)
-# Install jq so run.sh can parse options.json
+# Using :nightly because :latest on GHCR has not been updated recently.
+# nightly is newer (see GHCR package page).
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends jq && \
