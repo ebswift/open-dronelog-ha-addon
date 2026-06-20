@@ -1,8 +1,7 @@
-ARG CACHEBUST=2
 FROM ghcr.io/arpanghosh8453/open-dronelog:3.3.0
 
-# Pinned to 3.3.0 stable tag.
-# To force a fresh image pull on Rebuild, increment CACHEBUST and commit.
+# Pinned to stable 3.3.0 upstream image.
+# Bump version in config.yaml to force Supervisor to rebuild with fresh image.
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends jq && \
