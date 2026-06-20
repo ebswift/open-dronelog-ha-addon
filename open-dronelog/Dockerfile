@@ -1,4 +1,4 @@
-ARG CACHEBUST=1
+ARG CACHEBUST=2
 FROM ghcr.io/arpanghosh8453/open-dronelog:3.3.0
 
 # Pinned to 3.3.0 stable tag.
