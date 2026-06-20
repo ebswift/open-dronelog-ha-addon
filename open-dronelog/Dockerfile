@@ -1,6 +1,8 @@
-FROM ghcr.io/arpanghosh8453/open-dronelog:latest
+ARG CACHEBUST=1
+FROM ghcr.io/arpanghosh8453/open-dronelog:3.3.0
 
-# Using :latest (currently points to stable v3.3.0)
+# Pinned to 3.3.0 stable tag.
+# To force a fresh image pull on Rebuild, increment CACHEBUST and commit.
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends jq && \
