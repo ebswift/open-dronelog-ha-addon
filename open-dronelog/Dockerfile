@@ -1,11 +1,11 @@
-ARG BUILD_FROM
-FROM ${BUILD_FROM}
+FROM ghcr.io/arpanghosh8453/open-dronelog:latest
 
-# Robust HAOS wrapper. Copies run.sh and forces it as entrypoint
-# so that SYNC_LOGS_PATH and other options are always processed.
+# Explicit FROM (required on HAOS >= 2026.6 / Supervisor >= 2026.04)
+# The old ARG BUILD_FROM + FROM ${BUILD_FROM} pattern no longer works.
+# This wrapper ensures run.sh is always executed so that
+# SYNC_LOGS_PATH, DJI_API_KEY, etc. from options.json are processed.
 
 COPY run.sh /app/run.sh
 RUN chmod +x /app/run.sh
 
-# Use exec form and ensure we always run our wrapper
 CMD ["/app/run.sh"]
