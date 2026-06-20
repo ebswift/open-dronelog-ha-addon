@@ -1,4 +1,4 @@
-# Home Assistant Add-on: Open DroneLog (ebswift maintained fork)
+# Home Assistant App: Open DroneLog (ebswift maintained fork)
 # https://github.com/ebswift/open-dronelog-ha-addon
 
 name: "Open DroneLog"
@@ -7,7 +7,8 @@ slug: open-dronelog
 description: "Local-first drone flight log viewer with charts, maps, and analytics. Supports DJI and Litchi CSV formats."
 url: "https://github.com/ebswift/open-dronelog-ha-addon"
 
-# Use the pre-built GHCR image from upstream (no tag = latest)
+# Pre-built upstream image. The local Dockerfile now uses explicit FROM
+# (required on HAOS 2026.6+ / Supervisor >= 2026.04).
 image: ghcr.io/arpanghosh8453/open-dronelog
 
 arch:
@@ -20,7 +21,7 @@ boot: auto
 webui: "http://[HOST]:[PORT:8080]/"
 
 # Map HAOS /share so users can drop logs in /share/drone-logs for auto-sync.
-# read_only: false recommended on HAOS for reliable subdirectory handling.
+# read_only: false for reliable subdirectory handling on HAOS.
 map:
   - type: share
     read_only: false
