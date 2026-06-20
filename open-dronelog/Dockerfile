@@ -1,7 +1,6 @@
-FROM ghcr.io/arpanghosh8453/open-dronelog:nightly
+FROM ghcr.io/arpanghosh8453/open-dronelog:latest
 
-# Using :nightly because :latest on GHCR has not been updated recently.
-# nightly is newer (see GHCR package page).
+# Using :latest (currently points to stable v3.3.0)
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends jq && \
