@@ -3,7 +3,7 @@ set -e
 
 # Always print banner first so we can see in logs whether the wrapper ran
 printf '=============================================\n'
-printf ' Open DroneLog — Home Assistant Add-on (ebswift fork)\n'
+printf ' Open DroneLog — Home Assistant App (ebswift fork)\n'
 printf ' DATA_DIR:           /data/drone-logbook\n'
 
 CONFIG_PATH="/data/options.json"
